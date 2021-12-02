@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Registration Form</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="libraries/bootstrap4/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="libraries/dataTables4/css/dataTables.bootstrap4.min.css" type="text/css">
+    <link rel="stylesheet" href="libraries/fontawesome/css/font-awesome.min.css" type="text/css">
+    <link href="libraries/sidemenu/css/base.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/theme.css" type="text/css">
+    <link rel="stylesheet" href="css/form.css" type="text/css">
+    <link rel="stylesheet" href="css/side-form.css" type="text/css">
+
+  </head>
+
+<body>
+  <div class="mobile-drawer-background"><i class="fa fa-close close-drawer-icon"></i></div>
+  <div class="container main-container">
+  <h2 class="text-center mb-3">Registration Widget Developed With Jquery</h2>
+  <p>This is a demo registration page. The main feature of this jquery-widget is that we can skip the "optional fields OR non-mandatory-fields" and move to the "next step" of the form. And later on we can fill those "optional-fields" by going back to that particular step. By this we can track the "skipped optional-fields". <strong>Design and Developed By Faiz Mohammad Khan</strong></p>
+    <div class="container-fluid form-container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-left-right-5px">
+          <div class="form-div container-fluid">
+            <div id="form1" class="container-fluid steps-form">
+              <div class="steps-navbar-conatiner">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="progress" style="height:30px">
+                      <div class="progress-bar progress-bar-striped bg-success" style="width:0%;height:30px;">0%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row steps-row">
+                  <div class="col-md-12">
+                    <div class="steps-navbar-wrapper">
+                      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="pills-one-tab" data-toggle="pill" href="#pills-one" role="tab" aria-controls="pills-one" aria-selected="false">1</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-two-tab" data-toggle="pill" href="#pills-two" role="tab" aria-controls="pills-two" aria-selected="false">2</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-three-tab" data-toggle="pill" href="#pills-three" role="tab" aria-controls="pills-three" aria-selected="false">3</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-four-tab" data-toggle="pill" href="#pills-four" role="tab" aria-controls="pills-four" aria-selected="false">4</a>
+                        </li>
+                      </ul>
+
+                      <!-- <div class="list-group">
+                          <a href="#" class="list-group-item list-group-item-action active">Medical Details - Part 1</a>
+                          <a href="#" class="list-group-item list-group-item-action disabled">Medical Details - Part 2</a>
+                          <a href="#" class="list-group-item list-group-item-action">Travelling Details</a>
+                          <a href="#" class="list-group-item list-group-item-action">Address Details</a>
+                          <a href="#" class="list-group-item list-group-item-action">SSC Details</a>
+                          <a href="#" class="list-group-item list-group-item-action disabled">HSC Details</a>
+                        </div> -->
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="steps-counter-div">
+                      <label class="steps-counter-div-heading">Skipped Optional Fields</label>
+                  </div>
+                </div>
+                <div class="col-lg-9">
+                  <div class="steps-main-form-container">
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <div class="card">
+                              <div class="card-header">Primary Details</div>
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="form-group col-md-6">
+                                    <label class="mandatory-label">Name:</label>
+                                    <input type="text" class="form-control" data-myinput="mandatory-input">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label  class="mandatory-label">Date of Birth:</label>
+                                    <input type="date" class="form-control" data-myinput="mandatory-input">
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="form-group col-md-6">
+                                    <label>Place of Birth:</label>
+                                    <input type="text" class="form-control" data-myinput="optional-input">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label class="d-block optional-label">Marital Status:</label>
+                                <div class="radio-div" data-myinput="optional-input">
+                                <label class="radio-inline">
+                                  <input type="radio" name="marital-status-radio-button-name" id="inlineRadio1" value="option1" class="radio-class"> Married
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="marital-status-radio-button-name" id="inlineRadio2" value="option2" class="radio-class"> Unmarried
+                                </label>
+                                </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="card">
+                              <div class="card-header">Blood Details</div>
+                              <div class="card-body">
+                                <label class="mandatory-label">Blood Group:</label>
+                                <select class="form-control" data-myinput="mandatory-input">
+                                  <option value="" disabled selected hidden>Please Select</option>
+                                  <option>A</option>
+                                  <option>B</option>
+                                  <option>O</option>
+                                  <option>AB</option>
+                                </select>
+                                <hr class="form-inner-divider">
+                                <label class="d-block">Willing to Donate Blood?</label>
+                                <div class="radio-div" data-myinput="optional-input">
+                                <label class="radio-inline">
+                                  <input type="radio" name="blood-donate-radio-button-name" id="inlineRadio1" value="option1" class="radio-class"> Yes
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="blood-donate-radio-button-name" id="inlineRadio2" value="option2" class="radio-class"> No
+                                </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="card">
+                              <div class="card-header">Disability Details</div>
+                              <div class="card-body">
+                                <label class="d-block mandatory-label">Are You Physically Disabled ?</label>
+                                <div class="radio-div" data-myinput="mandatory-input">
+                                <label class="radio-inline">
+                                  <input type="radio" name="physically-disabled-radio-button-name" id="inlineRadio1" value="Yes" class="radio-class"> Yes
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="physically-disabled-radio-button-name" id="inlineRadio2" value="No" class="radio-class"> No
+                                </label>
+                                </div>
+                                <hr class="form-inner-divider">
+                                <label>Type of Handicap :</label>
+                                <select id="handicap-select-input" class="form-control" disabled>
+                                  <option value="" disabled selected hidden>Please Select</option>
+                                  <option> abc </option>
+                                  <option> def </option>
+                                  <option> xyz </option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="card">
+                              <div class="card-header">Body Identificaion Details</div>
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label for="my-textarea" class="mandatory-label">Identification Mark 1:</label>
+                                      <textarea id="my-textarea" class="form-control" name="" rows="3" data-myinput="mandatory-input"></textarea>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label for="my-textarea">Identification Mark 2:</label>
+                                      <textarea id="my-textarea" class="form-control" name="" rows="3" data-myinput="optional-input"></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="card">
+                              <div class="card-header">Social Information</div>
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="form-group col-md-4">
+                                    <label class="mandatory-label">Nationality :</label>
+                                    <select class="form-control" data-myinput="mandatory-input">
+                                      <option value="" disabled selected hidden>Please Select</option>
+                                      <option> abc </option>
+                                      <option> def </option>
+                                      <option> xyz </option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label class="mandatory-label">Religion :</label>
+                                    <select class="form-control" data-myinput="mandatory-input">
+                                      <option value="" disabled selected hidden>Please Select</option>
+                                      <option> abc </option>
+                                      <option> def </option>
+                                      <option> xyz </option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Ethnicity :</label>
+                                    <select class="form-control" data-myinput="optional-input">
+                                      <option value="" disabled selected hidden>Please Select</option>
+                                      <option> abc </option>
+                                      <option> def </option>
+                                      <option> xyz </option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="card">
+                              <div class="card-header">Travelling Information</div>
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="form-group col-md-4">
+                                    <label>Office to Home Distance:</label>
+                                    <input type="text" class="form-control" placeholder="in Kilometers" data-myinput="optional-input">
+                                  </div>
+
+                                  <div class="form-group col-md-4">
+                                    <label class="d-block mandatory-label">Do you Need Transport ? :</label>
+                                    <div class="radio-div" data-myinput="mandatory-input">
+                                      <label class="radio-inline">
+                                        <input type="radio" name="transport-radio-button-name" id="inlineRadio1" value="option1" class="radio-class"> Yes
+                                      </label>
+                                      <label class="radio-inline">
+                                        <input type="radio" name="transport-disabled-radio-button-name" id="inlineRadio2" value="option2" class="radio-class"> No
+                                      </label>
+                                      </div>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label class="d-block mandatory-label">Do You Need Hostel? :</label>
+                                    <div class="radio-div" data-myinput="mandatory-input">
+                                      <label class="radio-inline">
+                                        <input type="radio" name="hostel-disabled-radio-button-name" id="inlineRadio1" value="option1" class="radio-class"> Yes
+                                      </label>
+                                      <label class="radio-inline">
+                                        <input type="radio" name="hostel-disabled-radio-button-name" id="inlineRadio2" value="option2" class="radio-class"> No
+                                      </label>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-four" role="tabpanel" aria-labelledby="pills-four-tab">
+                        <h3>This is the 4th panel</h3>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12 text-center btn-row">
+                        <button class="btn btn-outline-danger prev-btn">Previous Step</button>
+                        <button class="btn btn-danger next-btn">Next Step</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <script src="libraries/jquery/jquery-3.6.0.min.js"></script>
+    <script src="libraries/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="libraries/dataTables4/js/jquery.dataTables.min.js"></script>
+    <script src="libraries/dataTables4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="libraries/sidemenu/js/zeynep.js"></script>
+    <!-- <script src="js/timeline_user.js"></script> -->
+    <script src="js/side-form.js"></script>
+</body>
+</html>
